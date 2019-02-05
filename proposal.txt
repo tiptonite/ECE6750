@@ -1,0 +1,7 @@
+Develop an application specific processor implemented on an FPGA and optimized for techniques such as 
+loop unrolling, pipelining, and paralellization and compare performance against a general purpose processor 
+on a specific application such as simulated annealing, md5 or other time intensive application.
+
+
+
+General Purpose processor: Intel Core i-5-8250U CPU @ 1.60GHz x 4
