@@ -1,7 +1,12 @@
-Develop an application specific processor implemented on an FPGA and optimized for techniques such as 
-loop unrolling, pipelining, and paralellization and compare performance against a general purpose processor 
-on a specific application such as simulated annealing, md5 or other time intensive application.
+Proposal for ECE 6750 Research Project
+Nathan Tipton and Tarrin Rasmussen
 
+Develop an application specific processor (ASP) implemented on an FPGA and optimized for techniques such as 
+loop unrolling, pipelining, and paralellization.Compare performance against a general purpose processor 
+on a specific application such as simulated annealing, md5, convolution, etc.  The specific general purpose processor was chosen because we already have it on hand and it is a newer processor.  This will give us a good comparison to see if our optimizations for the ASP really make a difference.  We may also test on other processors for additional comparisons.
 
+Comparison Metric: Execution Time
 
 General Purpose processor: Intel Core i-5-8250U CPU @ 1.60GHz x 4
+
+FPGA: Basys 3 Artix-7
