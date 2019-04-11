@@ -1,26 +1,28 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-
 package bus_multiplier_pkg is
-        type bus_array is array(natural range <>) of unsigned;
+        type bus_array is array(0 to 127 ) of unsigned(7 downto 0);
 end package;
 library work;
 use work.bus_multiplier_pkg.all;
 
-
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity convolution is
     port(
         clk             :in     std_logic;
-        reset           :in     std_logic;
         enable          :in     std_logic;
-        x_in            :in     bus_array(7 downto 0)(127 downto 0);
-        h_in            :in     bus_array(7 downto 0)(127 downto 0);
-        y_out           :out unsigned(7 downto 0);
+        reset           :in     std_logic;
+        x_in            :in     bus_array;
+        h_in            :in     bus_array;
+        y_out           :out    unsigned(7 downto 0)
 
-    )
+    );
 end convolution;
+
 architecture RTL of convolution is
     type mac_out is array (31 downto 0) of unsigned(7 downto 0);
     signal MAC_result :mac_out;
@@ -46,7 +48,7 @@ architecture RTL of convolution is
             datab_3		: IN STD_LOGIC_VECTOR (7 DOWNTO 0) :=  (OTHERS => '0');
             result		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
         );
-    END multadd;
+    END component multadd;
 
     component adder
         Port(
@@ -61,25 +63,26 @@ architecture RTL of convolution is
             out1 : out unsigned(7 downto 0)
 
         );
+    END component adder;
  
     
 begin
 
     MAC_inst : for n in 0 to 31 generate
 
-        MAC : MAC_inst
+        MAC : multadd
 
         port map(
             clock0=>clk,
-            dataa_0=>x_in(n*4),
-            dataa_1=>x_in(n*4+1),
-            dataa_2=>x_in(n*4+2),
-            dataa_3=>x_in(n*4+3),
-            datab_0=>h_in(n*4),
-            datab_1=>h_in(n*4+1),
-            datab_2=>h_in(n*4+2),
-            datab_3=>h_in(n*4+3),
-            result=>mac_out(n)
+           dataa_0=>std_logic_vector(x_in(n*4)),
+           dataa_1=>std_logic_vector(x_in(n*4+1)),
+           dataa_2=>std_logic_vector(x_in(n*4+2)),
+           dataa_3=>std_logic_vector(x_in(n*4+3)),
+           datab_0=>std_logic_vector(h_in(n*4)),
+           datab_1=>std_logic_vector(h_in(n*4+1)),
+           datab_2=>std_logic_vector(h_in(n*4+2)),
+           datab_3=>std_logic_vector(h_in(n*4+3)),
+            unsigned(result)=> MAC_result(n)
         );
     end generate;
 
@@ -92,12 +95,13 @@ begin
             en=>enable,
             rst=>reset,
 
-            in1=>mac_out(a*2),
-            in2=>mac_out(a*2+1),
+            in1=> MAC_result(a*2),
+            in2=> MAC_result(a*2+1),
 
             -- Outputs
             out1=>stage1_out(a)
         ); 
+    end generate;
 
         ADD_inst_stage2 : for a in 0 to 7 generate
 
@@ -114,6 +118,7 @@ begin
             -- Outputs
             out1=>stage2_out(a)
         ); 
+    end generate;
 
         ADD_inst_stage3 : for a in 0 to 3 generate
 
@@ -130,6 +135,7 @@ begin
             -- Outputs
             out1=>stage3_out(a)
         );
+    end generate;
 
         ADD_inst_stage4 : for a in 0 to 1 generate
 
@@ -146,6 +152,7 @@ begin
             -- Outputs
             out1=>stage4_out(a)
         );
+    end generate;
 
         ADD5 : adder
         port map(

@@ -33,7 +33,7 @@
 //refer to the applicable agreement for further details.
 
 
-//altmult_add ADDNSUB_MULTIPLIER_PIPELINE_REGISTER1="UNREGISTERED" ADDNSUB_MULTIPLIER_PIPELINE_REGISTER3="UNREGISTERED" ADDNSUB_MULTIPLIER_REGISTER1="CLOCK0" ADDNSUB_MULTIPLIER_REGISTER3="CLOCK0" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DEVICE_FAMILY="MAX 10" INPUT_REGISTER_A0="CLOCK0" INPUT_REGISTER_A1="CLOCK0" INPUT_REGISTER_A2="CLOCK0" INPUT_REGISTER_A3="CLOCK0" INPUT_REGISTER_B0="CLOCK0" INPUT_REGISTER_B1="CLOCK0" INPUT_REGISTER_B2="CLOCK0" INPUT_REGISTER_B3="CLOCK0" INPUT_SOURCE_A0="DATAA" INPUT_SOURCE_A1="DATAA" INPUT_SOURCE_A2="DATAA" INPUT_SOURCE_A3="DATAA" INPUT_SOURCE_B0="DATAB" INPUT_SOURCE_B1="DATAB" INPUT_SOURCE_B2="DATAB" INPUT_SOURCE_B3="DATAB" MULTIPLIER1_DIRECTION="ADD" MULTIPLIER3_DIRECTION="ADD" MULTIPLIER_REGISTER0="UNREGISTERED" MULTIPLIER_REGISTER1="UNREGISTERED" MULTIPLIER_REGISTER2="UNREGISTERED" MULTIPLIER_REGISTER3="UNREGISTERED" NUMBER_OF_MULTIPLIERS=4 OUTPUT_REGISTER="CLOCK0" port_addnsub1="PORT_UNUSED" port_addnsub3="PORT_UNUSED" port_signa="PORT_UNUSED" port_signb="PORT_UNUSED" REPRESENTATION_A="UNSIGNED" REPRESENTATION_B="UNSIGNED" SIGNED_PIPELINE_REGISTER_A="UNREGISTERED" SIGNED_PIPELINE_REGISTER_B="UNREGISTERED" SIGNED_REGISTER_A="CLOCK0" SIGNED_REGISTER_B="CLOCK0" WIDTH_A=8 WIDTH_B=8 WIDTH_RESULT=8 clock0 dataa datab result
+//altmult_add ADDNSUB_MULTIPLIER_PIPELINE_REGISTER1="UNREGISTERED" ADDNSUB_MULTIPLIER_PIPELINE_REGISTER3="UNREGISTERED" ADDNSUB_MULTIPLIER_REGISTER1="CLOCK0" ADDNSUB_MULTIPLIER_REGISTER3="CLOCK0" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DEVICE_FAMILY="MAX 10" INPUT_REGISTER_A0="UNREGISTERED" INPUT_REGISTER_A1="UNREGISTERED" INPUT_REGISTER_A2="UNREGISTERED" INPUT_REGISTER_A3="UNREGISTERED" INPUT_REGISTER_B0="UNREGISTERED" INPUT_REGISTER_B1="UNREGISTERED" INPUT_REGISTER_B2="UNREGISTERED" INPUT_REGISTER_B3="UNREGISTERED" INPUT_SOURCE_A0="DATAA" INPUT_SOURCE_A1="DATAA" INPUT_SOURCE_A2="DATAA" INPUT_SOURCE_A3="DATAA" INPUT_SOURCE_B0="DATAB" INPUT_SOURCE_B1="DATAB" INPUT_SOURCE_B2="DATAB" INPUT_SOURCE_B3="DATAB" MULTIPLIER1_DIRECTION="ADD" MULTIPLIER3_DIRECTION="ADD" MULTIPLIER_REGISTER0="UNREGISTERED" MULTIPLIER_REGISTER1="UNREGISTERED" MULTIPLIER_REGISTER2="UNREGISTERED" MULTIPLIER_REGISTER3="UNREGISTERED" NUMBER_OF_MULTIPLIERS=4 OUTPUT_REGISTER="CLOCK0" port_addnsub1="PORT_UNUSED" port_addnsub3="PORT_UNUSED" port_signa="PORT_UNUSED" port_signb="PORT_UNUSED" REPRESENTATION_A="UNSIGNED" REPRESENTATION_B="UNSIGNED" SIGNED_PIPELINE_REGISTER_A="UNREGISTERED" SIGNED_PIPELINE_REGISTER_B="UNREGISTERED" SIGNED_REGISTER_A="CLOCK0" SIGNED_REGISTER_B="CLOCK0" WIDTH_A=8 WIDTH_B=8 WIDTH_RESULT=8 clock0 dataa datab result
 //VERSION_BEGIN 18.0 cbx_alt_ded_mult_y 2018:04:24:18:04:18:SJ cbx_altera_mult_add 2018:04:24:18:04:18:SJ cbx_altera_mult_add_rtl 2018:04:24:18:04:18:SJ cbx_altmult_add 2018:04:24:18:04:18:SJ cbx_cycloneii 2018:04:24:18:04:18:SJ cbx_lpm_add_sub 2018:04:24:18:04:18:SJ cbx_lpm_mult 2018:04:24:18:04:18:SJ cbx_mgl 2018:04:24:18:08:49:SJ cbx_nadder 2018:04:24:18:04:18:SJ cbx_padd 2018:04:24:18:04:18:SJ cbx_parallel_add 2018:04:24:18:04:18:SJ cbx_stratix 2018:04:24:18:04:18:SJ cbx_stratixii 2018:04:24:18:04:18:SJ cbx_util_mgl 2018:04:24:18:04:18:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -52,7 +52,7 @@
 //VERSION_BEGIN 18.0 cbx_mgl 2018:04:24:18:08:49:SJ cbx_stratixii 2018:04:24:18:04:18:SJ cbx_util_mgl 2018:04:24:18:04:18:SJ  VERSION_END
 
 
-//alt_ded_mult_y dedicated_multiplier_circuitry="YES" device_family="MAX 10" input_aclr_a="ACLR0" input_aclr_b="ACLR0" input_reg_a="CLOCK0" input_reg_b="CLOCK0" output_reg="UNREGISTERED" pipeline_reg="UNREGISTERED" representation_a="UNSIGNED" representation_b="UNSIGNED" sub_dedicated_multiplier_circuitry="YES" width_a=8 width_b=8 aclr clock dataa datab ena result
+//alt_ded_mult_y dedicated_multiplier_circuitry="YES" device_family="MAX 10" input_reg_a="UNREGISTERED" input_reg_b="UNREGISTERED" output_reg="UNREGISTERED" pipeline_reg="UNREGISTERED" representation_a="UNSIGNED" representation_b="UNSIGNED" sub_dedicated_multiplier_circuitry="YES" width_a=8 width_b=8 dataa datab result
 //VERSION_BEGIN 18.0 cbx_alt_ded_mult_y 2018:04:24:18:04:18:SJ cbx_cycloneii 2018:04:24:18:04:18:SJ cbx_lpm_add_sub 2018:04:24:18:04:18:SJ cbx_mgl 2018:04:24:18:08:49:SJ cbx_nadder 2018:04:24:18:04:18:SJ cbx_padd 2018:04:24:18:04:18:SJ cbx_parallel_add 2018:04:24:18:04:18:SJ cbx_stratix 2018:04:24:18:04:18:SJ cbx_stratixii 2018:04:24:18:04:18:SJ cbx_util_mgl 2018:04:24:18:04:18:SJ  VERSION_END
 
 
@@ -82,31 +82,17 @@ endmodule //multadd_dffpipe
 //synopsys translate_on
 module  multadd_ded_mult
 	( 
-	aclr,
-	clock,
 	dataa,
 	datab,
-	ena,
 	result) /* synthesis synthesis_clearbox=1 */;
-	input   [3:0]  aclr;
-	input   [3:0]  clock;
 	input   [7:0]  dataa;
 	input   [7:0]  datab;
-	input   [3:0]  ena;
 	output   [15:0]  result;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_off
-`endif
-	tri0   [3:0]  aclr;
-	tri1   [3:0]  clock;
-	tri1   [3:0]  ena;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_on
-`endif
 
 	wire  [15:0]   wire_mac_mult12_dataout;
 	wire  [15:0]   wire_mac_out13_dataout;
 	wire  [15:0]   wire_pre_result_q;
+	wire [3:0]  aclr;
 	wire  [7:0]  x_dataa;
 	wire  [7:0]  x_datab;
 	wire  [0:0]  x_signa;
@@ -115,13 +101,20 @@ module  multadd_ded_mult
 	fiftyfivenm_mac_mult   mac_mult12
 	( 
 	.aclr(aclr[0]),
-	.clk(clock[0]),
 	.dataa({x_dataa}),
 	.datab({x_datab}),
 	.dataout(wire_mac_mult12_dataout),
-	.ena(ena[0]),
 	.signa(x_signa),
 	.signb(x_signb)
+	`ifndef FORMAL_VERIFICATION
+	// synopsys translate_off
+	`endif
+	,
+	.clk(1'b1),
+	.ena(1'b1)
+	`ifndef FORMAL_VERIFICATION
+	// synopsys translate_on
+	`endif
 	// synopsys translate_off
 	,
 	.devclrn(1'b1),
@@ -129,9 +122,7 @@ module  multadd_ded_mult
 	// synopsys translate_on
 	);
 	defparam
-		mac_mult12.dataa_clock = "0",
 		mac_mult12.dataa_width = 8,
-		mac_mult12.datab_clock = "0",
 		mac_mult12.datab_width = 8,
 		mac_mult12.lpm_type = "fiftyfivenm_mac_mult";
 	fiftyfivenm_mac_out   mac_out13
@@ -162,6 +153,7 @@ module  multadd_ded_mult
 	.d(wire_mac_out13_dataout[15:0]),
 	.q(wire_pre_result_q));
 	assign
+		aclr = {4{1'b0}},
 		result = wire_pre_result_q,
 		x_dataa = dataa,
 		x_datab = datab,
@@ -210,50 +202,38 @@ module  multadd_mult_add
 	wire  [31:0]  dataa_bus;
 	wire  [31:0]  datab_bus;
 	wire ena0;
-	wire  [16:0]  w_input190w;
-	wire  [16:0]  w_input197w;
-	wire  [16:0]  w_input203w;
-	wire  [16:0]  w_input209w;
-	wire  [17:0]  w_input215w;
-	wire  [17:0]  w_input221w;
+	wire  [16:0]  w_input166w;
+	wire  [16:0]  w_input173w;
+	wire  [16:0]  w_input179w;
+	wire  [16:0]  w_input185w;
+	wire  [17:0]  w_input191w;
+	wire  [17:0]  w_input197w;
 
 	assign
-		wire_add5_result = w_input190w + w_input197w;
+		wire_add5_result = w_input166w + w_input173w;
 	assign
-		wire_add7_result = w_input203w + w_input209w;
+		wire_add7_result = w_input179w + w_input185w;
 	assign
-		wire_add9_result = w_input215w + w_input221w;
+		wire_add9_result = w_input191w + w_input197w;
 	multadd_ded_mult   ded_mult1
 	( 
-	.aclr({{3{1'b0}}, aclr0}),
-	.clock({{3{1'b1}}, clock0}),
 	.dataa({dataa_bus[7:0]}),
 	.datab({datab_bus[7:0]}),
-	.ena({{3{1'b1}}, ena0}),
 	.result(wire_ded_mult1_result));
 	multadd_ded_mult   ded_mult2
 	( 
-	.aclr({{3{1'b0}}, aclr0}),
-	.clock({{3{1'b1}}, clock0}),
 	.dataa({dataa_bus[15:8]}),
 	.datab({datab_bus[15:8]}),
-	.ena({{3{1'b1}}, ena0}),
 	.result(wire_ded_mult2_result));
 	multadd_ded_mult   ded_mult3
 	( 
-	.aclr({{3{1'b0}}, aclr0}),
-	.clock({{3{1'b1}}, clock0}),
 	.dataa({dataa_bus[23:16]}),
 	.datab({datab_bus[23:16]}),
-	.ena({{3{1'b1}}, ena0}),
 	.result(wire_ded_mult3_result));
 	multadd_ded_mult   ded_mult4
 	( 
-	.aclr({{3{1'b0}}, aclr0}),
-	.clock({{3{1'b1}}, clock0}),
 	.dataa({dataa_bus[31:24]}),
 	.datab({datab_bus[31:24]}),
-	.ena({{3{1'b1}}, ena0}),
 	.result(wire_ded_mult4_result));
 	// synopsys translate_off
 	initial
@@ -482,12 +462,12 @@ module  multadd_mult_add
 		datab_bus = {datab[31:0]},
 		ena0 = 1'b1,
 		result = dffe11a[7:0],
-		w_input190w = {1'b0, wire_ded_mult1_result[15:0]},
-		w_input197w = {1'b0, wire_ded_mult2_result[15:0]},
-		w_input203w = {1'b0, wire_ded_mult3_result[15:0]},
-		w_input209w = {1'b0, wire_ded_mult4_result[15:0]},
-		w_input215w = {1'b0, wire_add5_result},
-		w_input221w = {1'b0, wire_add7_result};
+		w_input166w = {1'b0, wire_ded_mult1_result[15:0]},
+		w_input173w = {1'b0, wire_ded_mult2_result[15:0]},
+		w_input179w = {1'b0, wire_ded_mult3_result[15:0]},
+		w_input185w = {1'b0, wire_ded_mult4_result[15:0]},
+		w_input191w = {1'b0, wire_add5_result},
+		w_input197w = {1'b0, wire_add7_result};
 endmodule //multadd_mult_add
 //VALID FILE
 
@@ -581,8 +561,8 @@ endmodule
 // Retrieval info: PRIVATE: IMPL_STYLE_DEFAULT NUMERIC "0"
 // Retrieval info: PRIVATE: IMPL_STYLE_LCELL NUMERIC "0"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "MAX 10"
-// Retrieval info: PRIVATE: MULT_REGA0 NUMERIC "1"
-// Retrieval info: PRIVATE: MULT_REGB0 NUMERIC "1"
+// Retrieval info: PRIVATE: MULT_REGA0 NUMERIC "0"
+// Retrieval info: PRIVATE: MULT_REGB0 NUMERIC "0"
 // Retrieval info: PRIVATE: MULT_REGOUT0 NUMERIC "0"
 // Retrieval info: PRIVATE: NUM_MULT STRING "4"
 // Retrieval info: PRIVATE: OP1 STRING "Add"
@@ -631,22 +611,14 @@ endmodule
 // Retrieval info: CONSTANT: ADDNSUB_MULTIPLIER_REGISTER1 STRING "CLOCK0"
 // Retrieval info: CONSTANT: ADDNSUB_MULTIPLIER_REGISTER3 STRING "CLOCK0"
 // Retrieval info: CONSTANT: DEDICATED_MULTIPLIER_CIRCUITRY STRING "YES"
-// Retrieval info: CONSTANT: INPUT_ACLR_A0 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_A1 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_A2 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_A3 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_B0 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_B1 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_B2 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_ACLR_B3 STRING "UNUSED"
-// Retrieval info: CONSTANT: INPUT_REGISTER_A0 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_A1 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_A2 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_A3 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_B0 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_B1 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_B2 STRING "CLOCK0"
-// Retrieval info: CONSTANT: INPUT_REGISTER_B3 STRING "CLOCK0"
+// Retrieval info: CONSTANT: INPUT_REGISTER_A0 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_A1 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_A2 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_A3 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_B0 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_B1 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_B2 STRING "UNREGISTERED"
+// Retrieval info: CONSTANT: INPUT_REGISTER_B3 STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: INPUT_SOURCE_A0 STRING "DATAA"
 // Retrieval info: CONSTANT: INPUT_SOURCE_A1 STRING "DATAA"
 // Retrieval info: CONSTANT: INPUT_SOURCE_A2 STRING "DATAA"
