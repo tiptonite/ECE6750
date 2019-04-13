@@ -2,7 +2,7 @@
 #include <chrono>
 #include <fstream>
 
-#define Lh  1000 // impulse
+#define Lh  128  // impulse
 #define Lx  1000 // input
 #define REP 1000 // number of repetitions
 
@@ -14,6 +14,7 @@ int main() {
     int y[Ly] = { 0 }; // output array
     int x[Lz] = { 0 }; // input array
     int h[Lh] = { 0 }; // impulse array
+    int t[REP]; // time array
 
     // Fill the arrays
     for (int i = (Lh - 1); i < (Lx + Lh - 1); i++)
@@ -40,13 +41,21 @@ int main() {
         auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
         acc += elapsed.count();
+        t[i] = elapsed.count();
 
     }
 
-    std::ofstream fout("output.txt");
+    std::ofstream fout("conv.txt");
 
     for (int i = 0; i < Ly; i++)
         fout << y[i] << std::endl;
+
+    fout.close();
+
+    fout.open("time.txt");
+
+    for (int i = 0; i < REP; i++)
+        fout << t[i] << std::endl;
 
     fout.close();
 
