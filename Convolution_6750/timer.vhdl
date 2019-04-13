@@ -23,7 +23,7 @@ entity timer is
         done : in std_logic;
 
         -- Outputs
-        out1 : out unsigned(10 downto 0)
+        out1 : out std_logic_vector(23 downto 0)
 
     );
 
@@ -44,16 +44,16 @@ begin
     ---------------
 
     process (clk)
-        variable count : unsigned(10 downto 0) := "00000000001";
+        variable count : unsigned(23 downto 0) := X"000000";
     begin
         if rising_edge(clk) then
 
-            if rst = '1' then
-                count := "00000000001";
+            if rst = '0' then
+                count := X"000000";
             end if;
 
             if done = '1' then
-                out1 <= count;
+                out1 <= std_logic_vector(count);
             elsif en = '1' then
                 count := count + 1;
             end if;

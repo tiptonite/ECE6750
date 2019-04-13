@@ -1,9 +1,3 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-package bus_multiplier_pkg is
-        type bus_array is array(0 to 127 ) of unsigned(7 downto 0);
-end package;
 library work;
 use work.bus_multiplier_pkg.all;
 

@@ -49,7 +49,7 @@ begin
     begin
         if rising_edge(pclk) then
 
-            if rst = '1' then
+            if rst = '0' then
                 out1 <= "00000000";
             elsif en = '1' then
                 out1 <= in1 + in2;

@@ -51,7 +51,7 @@ begin
     begin
         if rising_edge(pclk) then
 
-            if rst = '1' then
+            if rst = '0' then
                 done <= '0';
                 yin_2 := '0';
             elsif en = '1' and yin = "00000010" then

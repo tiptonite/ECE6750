@@ -8,20 +8,17 @@ port(
 		clk	:in	std_logic;
 		reset :in	std_logic;
 		button	:in	std_logic;
-		number	:out	unsigned(23 downto 0);
-		add		:in	std_logic_vector(9 downto 0)
-
+		trigger	:out	std_logic
 
 );
 end buttonDebounce;
 
 architecture RTL of buttonDebounce is
-type state is (IDLE,COUNT,COUNT2,TRIG,ACC);
+type state is (IDLE,COUNT,COUNT2,TRIG,ENABLE);
 signal PS :state;
 signal NS :state;
 signal done :std_logic;
 signal timer :unsigned(31 downto 0):=(others=>'0');
-signal accumulate :unsigned(23 downto 0) := (others=>'0');
 signal nexttimer :unsigned(15 downto 0) :=(others =>'0');
 signal extend :unsigned(23 downto 0) := (others =>'0');
 begin
@@ -30,13 +27,8 @@ accState :process(clk,reset)
 	if reset='0' then
 		PS<=IDLE;
 	
-		accumulate<=(others=>'0');
-	
 	elsif rising_edge(clk) then
 		PS <= NS;
-		if(PS=ACC) then
-			accumulate<=accumulate+unsigned(add);
-		end if;
 	end if;
 end process accState;
 		
@@ -54,7 +46,7 @@ variable added :integer :=0;
 						
 					end if;
 				when COUNT=>
-					if timer=X"0000FFFF" then
+					if timer=X"0000000F" then
 						NS<=TRIG;
 						
 					else
@@ -67,26 +59,18 @@ variable added :integer :=0;
 					else
 						NS<=TRIG;
 					end if;
---				when COUNT =>
---					if(done='1') then
---						if(button='0') then
---							NS<=ACC;
---						else
---							NS<=COUNT;
---						end if;
---					else
---						NS<=COUNT;
---					end if;
+
 				when COUNT2=>
-					if timer=X"0000FFFF" then
-						NS<=ACC;
+					if timer=X"0000000F" then
+						NS<=ENABLE;
 						
 					else
 						NS<=COUNT2;
 						
+
 					end if;
-				when ACC =>
-						NS<=IDLE;
+				when ENABLE =>
+						NS<=ENABLE;
 						
 						--accumulate<=accumulate+unsigned(add);
 						
@@ -95,12 +79,30 @@ variable added :integer :=0;
 			
 			
 		end process debounce;
-		
+outputprocess :process(PS)
+begin
+	case PS is
+				when IDLE =>
+					trigger<='0';
+				when COUNT=>
+					trigger<='0';
+				when TRIG=>
+					trigger<='0';
+				when COUNT2=>
+					trigger<='0';
+				when ENABLE =>
+					trigger<='1';				
+				end case;
+
+
+end process;
+
+
 counter:process(clk,PS)
 begin
 if PS=COUNT or PS=COUNT2 then
 	if rising_edge(clk) then
-		if timer/=X"FFFF" then
+		if timer/=X"000F" then
 			timer<=timer+1;
 	
 	end if;
@@ -114,7 +116,6 @@ end if;
 
 end process counter;
 
-number(23 downto 0)<=accumulate(23 downto 0);
 
 
 
